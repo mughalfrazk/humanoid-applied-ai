@@ -11,9 +11,9 @@ os.makedirs(log_dir, exist_ok=True)
 
 
 def train(env, sb3_algo):
-    model01 = PPO("MlpPolicy", env, verbose=1, tensorboard_log="logs/PP0_0", seed=12, gamma=0.9, ent_coef=0.01, clip_range=0.2)
-    model02 = PPO("MlpPolicy", env, verbose=1, tensorboard_log="logs/PP0_1", seed=12, gamma=0.95, ent_coef=0.5, clip_range=0.1)
-    model03 = PPO("MlpPolicy", env, verbose=1, tensorboard_log="logs/PP0_2", seed=12, gamma=0.99, ent_coef=0.1)
+    model01 = PPO("MlpPolicy", env, verbose=1, tensorboard_log="logs/PP0_0", seed=12, gamma=0.9, ent_coef=0.01, clip_range=0.2, learning_rate=0.001)
+    model02 = PPO("MlpPolicy", env, verbose=1, tensorboard_log="logs/PP0_1", seed=12, gamma=0.95, ent_coef=0.5, clip_range=0.1, learning_rate=0.0009)
+    model03 = PPO("MlpPolicy", env, verbose=1, tensorboard_log="logs/PP0_2", seed=12, gamma=0.99, ent_coef=0.1, learning_rate=0.009)
     TIMESTEPS = 500
     iters = 0
     while True:
